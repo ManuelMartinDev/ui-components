@@ -76,7 +76,7 @@ export const Nav: React.FC<NavProps> = (props) => {
                 dropdownIsOpen={dropdownIsOpen}
               >
                 <DropdownList>
-                  {props.userLinks?.map((link) => (
+                  {props.userLinks?.map((link: any) => (
                     <DropdownItem>{link}</DropdownItem>
                   ))}
                 </DropdownList>
