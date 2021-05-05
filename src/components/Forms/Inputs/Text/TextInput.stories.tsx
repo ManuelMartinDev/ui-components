@@ -26,4 +26,8 @@ export const Warning = Template.bind({});
 
 Underline.args = {
   label: "Username",
+  additionalStyles: {
+    border: "none",
+    borderBottom: "2px solid black",
+  },
 };
