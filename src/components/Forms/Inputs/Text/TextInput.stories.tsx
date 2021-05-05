@@ -17,6 +17,10 @@ export default {
 } as Meta;
 
 const Template: Story<TextInputProps> = (args) => <TextInput {...args} />;
-export const Primary = Template.bind({});
+export const Underline = Template.bind({});
 export const Danger = Template.bind({});
 export const Warning = Template.bind({});
+
+Underline.args = {
+  label: "Username",
+};

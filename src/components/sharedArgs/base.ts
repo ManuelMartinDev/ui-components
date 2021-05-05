@@ -1,11 +1,11 @@
 export const baseArgsTypes = {
-  customStyles: {
+  responsiveStyles: {
     control: "object",
   },
 };
 
 export const baseArgs = {
-  customStyles: {
+  responsiveStyles: {
     mobile: {},
     tablet: {},
     desktop: {},

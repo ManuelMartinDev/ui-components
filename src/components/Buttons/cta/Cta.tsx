@@ -21,7 +21,7 @@ export const Cta: React.FC<CtaProps> = (props: CtaProps) => {
 
 Cta.defaultProps = {
   theme: theme,
-  customStyles: {
+  responsiveStyles: {
     mobile: {
       border: "2px solid red",
     },

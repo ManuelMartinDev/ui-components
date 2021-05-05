@@ -53,7 +53,7 @@ export const shapedComponentsArgs = {
     bottomRight: "",
     bottomLeft: "",
   },
-  customStyles: {
+  responsiveStyles: {
     mobile: {},
     tablet: {},
     desktop: {},

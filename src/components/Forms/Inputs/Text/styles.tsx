@@ -1,5 +1,10 @@
 import styled from "styled-components";
 import { shapedComponentStyles } from "../../../globalStyles/shapedComponents";
-export const Input = styled.input`
+import { TextInputProps } from "./TextInput";
+export const Input = styled.input<TextInputProps>`
   ${shapedComponentStyles}
+`;
+
+export const Label = styled.label`
+  display: block;
 `;
