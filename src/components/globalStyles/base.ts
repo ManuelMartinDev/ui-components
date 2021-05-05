@@ -17,4 +17,6 @@ export const baseStyles = css<BaseProps>`
   }) { 
 	${responsiveStyles?.desktop && cssifyObject({ ...responsiveStyles.desktop })}
   }`}
+   ${({ additionalStyles }) =>
+    additionalStyles && cssifyObject({ ...additionalStyles })}
 `;

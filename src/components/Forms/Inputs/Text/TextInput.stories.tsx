@@ -5,13 +5,16 @@ import {
   shapedComponentsArgs,
   shapedComponentsArgsTypes,
 } from "../../../sharedArgs/shapedComponents";
+import { baseArgs, baseArgsTypes } from "../../../sharedArgs/base";
 export default {
   title: "Components/Forms/Inputs/Text",
   component: TextInput,
   argTypes: {
+    ...baseArgsTypes,
     ...shapedComponentsArgsTypes,
   },
   args: {
+    ...baseArgs,
     ...shapedComponentsArgs,
   },
 } as Meta;

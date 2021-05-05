@@ -8,5 +8,6 @@ export interface Styles {
 }
 export interface BaseProps {
   theme: Theme;
+  additionalStyles?: CSS.Properties;
   responsiveStyles?: Styles;
 }
