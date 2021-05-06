@@ -4,12 +4,14 @@ import { theme } from "../../../themes";
 import { shapedComponentsProps } from "../../../commonInterfaces/shapedComponents";
 export interface TextInputProps extends shapedComponentsProps {
   label?: string;
+  placeholder?: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 export const TextInput: React.FC<TextInputProps> = (props) => {
   return (
     <Fragment>
       {props.label && <Label>{props.label}</Label>}
-      <Input {...props}></Input>
+      <Input name="input" onChange={(e) => alert("changed")} {...props}></Input>
     </Fragment>
   );
 };

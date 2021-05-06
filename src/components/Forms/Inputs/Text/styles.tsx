@@ -4,9 +4,12 @@ import { baseStyles } from "../../../globalStyles/base";
 import { TextInputProps } from "./TextInput";
 
 export const Input = styled.input<TextInputProps>`
+  outline: none;
+  &:focus {
+    outline: none;
+  }
   ${shapedComponentStyles}
   ${baseStyles}
-  outline:'none'
 `;
 
 export const Label = styled.label`

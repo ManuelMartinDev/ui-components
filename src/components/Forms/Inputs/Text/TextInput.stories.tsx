@@ -10,6 +10,9 @@ export default {
   title: "Components/Forms/Inputs/Text",
   component: TextInput,
   argTypes: {
+    label: {},
+    placeholder: {},
+    onChange: { action: "changed" },
     ...baseArgsTypes,
     ...shapedComponentsArgsTypes,
   },
@@ -30,4 +33,5 @@ Underline.args = {
     border: "none",
     borderBottom: "2px solid black",
   },
+  placeholder: "Introduce your username",
 };
