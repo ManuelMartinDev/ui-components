@@ -4,7 +4,9 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "../themes";
 import { shapedComponentsProps } from "../../commonInterfaces/shapedComponents";
 
-export interface CtaProps extends shapedComponentsProps {
+export interface CtaProps
+  extends shapedComponentsProps,
+    React.ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
   hoverBg?: string;
   hoverBgTransition?: string;

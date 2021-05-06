@@ -12,7 +12,7 @@ export const TextInput: React.FC<TextInputProps> = (props) => {
   return (
     <Fragment>
       {props.label && <Label>{props.label}</Label>}
-      <Input name="" onChange={(e) => alert("changed")} {...props}></Input>
+      <Input name="" {...props}></Input>
     </Fragment>
   );
 };
