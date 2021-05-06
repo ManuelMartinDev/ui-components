@@ -12,7 +12,8 @@ export const Input = styled.input<TextInputProps>`
   ${baseStyles}
 `;
 
-export const Label = styled.label`
-  display: block;
+export const Label = styled.label<TextInputProps>`
+  display: ${({ labelPosition }) =>
+    labelPosition === "top" ? "block" : "inline-block"};
   margin-bottom: 5px;
 `;

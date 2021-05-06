@@ -1,6 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
 import { TextInput, TextInputProps } from "./TextInput";
+
 import {
   shapedComponentsArgs,
   shapedComponentsArgsTypes,
@@ -12,7 +13,11 @@ export default {
   argTypes: {
     label: {},
     placeholder: {},
-    onChange: { action: "changed" },
+    labelPosition: {
+      options: ["top", "side"],
+      control: "select",
+      description: "set the label position",
+    },
     ...baseArgsTypes,
     ...shapedComponentsArgsTypes,
   },
@@ -24,8 +29,8 @@ export default {
 
 const Template: Story<TextInputProps> = (args) => <TextInput {...args} />;
 export const Underline = Template.bind({});
-export const Danger = Template.bind({});
-export const Warning = Template.bind({});
+export const Rounded = Template.bind({});
+export const noLabel = Template.bind({});
 
 Underline.args = {
   label: "Username",
@@ -34,4 +39,21 @@ Underline.args = {
     borderBottom: "2px solid black",
   },
   placeholder: "Introduce your username",
+};
+
+Rounded.args = {
+  label: "username",
+  borderShape: "rounded",
+  bgType: "custom",
+  customBg: "#EDF1F4",
+  additionalStyles: {
+    border: "1px solid rgba(0,0,0,0.5)",
+    height: "25px",
+    width: "180px",
+    fontSize: "1em",
+  },
+};
+
+noLabel.args = {
+  label: "",
 };
