@@ -6,13 +6,15 @@ import { shapedComponentsProps } from "../commonInterfaces/shapedComponents";
 export function testShapedComponents(
   Component: React.FC<shapedComponentsProps>
 ) {
-  let renderedComponent: RenderResult;
-  beforeEach(() => {
-    renderedComponent = render(<Component theme={theme} bgType="primary" />);
-  });
+  let renderedComponent = render(<Component />);
 
-  test("should have a have the background given in props", () => {
+  it("should have a have the background given in props", () => {
     const button = renderedComponent.getByText("Buy now");
     expect(button).toHaveStyle(`background-color:${theme.colors.primary}`);
+  });
+  it("should have the additional styles given in props", () => {
+    const button = renderedComponent.getByText("Buy now");
+
+    expect(button).toHaveStyle("border:2px solid red");
   });
 }

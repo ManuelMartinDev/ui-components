@@ -8,8 +8,8 @@ export const Input = styled.input<TextInputProps>`
   &:focus {
     outline: none;
   }
-  ${shapedComponentStyles}
-  ${baseStyles}
+  ${shapedComponentStyles};
+  ${baseStyles};
 `;
 
 export const Label = styled.label<TextInputProps>`

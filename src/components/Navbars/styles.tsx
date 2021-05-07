@@ -1,4 +1,5 @@
 import { shapedComponentStyles } from "../globalStyles/shapedComponents";
+import { baseStyles } from "../globalStyles/base";
 import { styled } from "../commonInterfaces/themes";
 import { NavProps } from "./Nav";
 import { cssifyObject } from "css-in-js-utils";
@@ -6,7 +7,8 @@ export const Wrapper = styled.div`
   position: relative;
 `;
 export const Navbar = styled.nav`
-  ${shapedComponentStyles}
+  ${shapedComponentStyles};
+  ${baseStyles};
   width: 100%;
   height: 64px;
   color: white;

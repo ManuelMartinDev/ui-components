@@ -11,7 +11,6 @@ export const baseArgsTypes = {
 };
 
 export const baseArgs = {
-  additionalStyles: {},
   responsiveStyles: {
     mobile: {},
     tablet: {},
