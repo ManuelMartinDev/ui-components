@@ -7,7 +7,7 @@ import { shapedComponentsProps } from "../../commonInterfaces/shapedComponents";
 export interface CtaProps
   extends shapedComponentsProps,
     React.ButtonHTMLAttributes<HTMLButtonElement> {
-  label: string;
+  label?: string;
   hoverBg?: string;
   hoverBgTransition?: string;
 }
@@ -36,4 +36,4 @@ Cta.defaultProps = {
       border: "2px solid yellow",
     },
   },
-};
+} as Partial<CtaProps>;

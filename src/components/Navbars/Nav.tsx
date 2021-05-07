@@ -48,7 +48,7 @@ export const Nav: React.FC<NavProps> = (props) => {
     setDropdown(!dropdownIsOpen);
   };
   const toggleMenu = () => setMenu(!menuIsOpen);
-  const match = useMediaQuery(theme.breakpoints[triggerOn]);
+  const match = useMediaQuery(theme!.breakpoints[triggerOn]);
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
