@@ -16,7 +16,9 @@ export const Cta: React.FC<CtaProps> = (props: CtaProps) => {
   const { label, theme } = props;
   return (
     <ThemeProvider theme={theme}>
-      <Button {...props}>{label}</Button>
+      <Button className="cta" {...props}>
+        {label}
+      </Button>
     </ThemeProvider>
   );
 };

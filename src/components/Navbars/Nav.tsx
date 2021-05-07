@@ -4,6 +4,7 @@ import { shapedComponentsProps } from "../commonInterfaces/shapedComponents";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../themes";
 import Face from "../../assets/face.jpeg";
+
 import {
   Wrapper,
   Navbar,
@@ -51,7 +52,7 @@ export const Nav: React.FC<NavProps> = (props) => {
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
-        <Navbar onClick={closeDropdown} {...props}>
+        <Navbar className="navbar" onClick={closeDropdown} {...props}>
           {match && (
             <Hambuger
               onClick={toggleMenu}
@@ -59,25 +60,35 @@ export const Nav: React.FC<NavProps> = (props) => {
               src={HambugerSvg}
             ></Hambuger>
           )}
-          <Logo {...props} alt="logo" src={match ? mobileLogo ?? logo : logo} />
+          <Logo
+            className="navbar__logo"
+            {...props}
+            alt="logo"
+            src={match ? mobileLogo ?? logo : logo}
+          />
           {!match && (
-            <FullLinkList>
+            <FullLinkList className="navbar__full-linklist">
               {props.navLinks.map((link: any) => (
-                <FullLinkListItem>{link}</FullLinkListItem>
+                <FullLinkListItem className="navbar__full-linklist__item">
+                  {link}
+                </FullLinkListItem>
               ))}
             </FullLinkList>
           )}
           {userPicture ? (
             <UserDropdown onClick={toggleDropdown}>
-              <UserPicture src={Face} />
+              <UserPicture className="navbar__user-picture" src={Face} />
               <Dropdown
+                className="navbar__dropdown"
                 onClick={(e: React.MouseEvent) => e.stopPropagation()}
                 {...props}
                 dropdownIsOpen={dropdownIsOpen}
               >
-                <DropdownList>
+                <DropdownList className="navbar__dropdown__list">
                   {props.userLinks?.map((link: any) => (
-                    <DropdownItem>{link}</DropdownItem>
+                    <DropdownItem className="navbar__dropdown__list-item">
+                      {link}
+                    </DropdownItem>
                   ))}
                 </DropdownList>
               </Dropdown>
@@ -86,10 +97,16 @@ export const Nav: React.FC<NavProps> = (props) => {
             <span></span>
           )}
         </Navbar>
-        <MobileMenu {...props} menuIsOpen={menuIsOpen}>
-          <LinksList>
+        <MobileMenu
+          className="navbar__mobile-menu"
+          {...props}
+          menuIsOpen={menuIsOpen}
+        >
+          <LinksList className="navbar__mobile-menu__list">
             {navLinks.map((link: any) => (
-              <LinkListItem>{link}</LinkListItem>
+              <LinkListItem className="navbar__mobile-menu__list__item">
+                {link}
+              </LinkListItem>
             ))}
           </LinksList>
         </MobileMenu>

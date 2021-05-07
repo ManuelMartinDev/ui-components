@@ -13,9 +13,14 @@ export const TextInput: React.FC<TextInputProps> = (props) => {
   return (
     <Fragment>
       {props.label && (
-        <Label labelPosition={props.labelPosition}>{props.label}</Label>
+        <Label
+          className="text-input__label"
+          labelPosition={props.labelPosition}
+        >
+          {props.label}
+        </Label>
       )}
-      <Input {...props}></Input>
+      <Input className="text-input" {...props}></Input>
     </Fragment>
   );
 };
