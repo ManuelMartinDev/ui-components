@@ -13,6 +13,9 @@ beforeEach(() => {
       theme={theme}
       bgType="primary"
       hoverBg="red"
+      borderShape="rounded"
+      darkOnUserPreference={true}
+      shadow="big"
     />
   );
 });

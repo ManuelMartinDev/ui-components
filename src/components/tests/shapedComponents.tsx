@@ -17,4 +17,14 @@ export function testShapedComponents(
 
     expect(button).toHaveStyle("border:2px solid red");
   });
+  it("should have the border-radius given in props", () => {
+    const button = renderedComponent.getByText("Buy now");
+
+    expect(button).toHaveStyle(`border-radius:${theme.borders.rounded}`);
+  });
+  it("should have shadow given in props", () => {
+    const button = renderedComponent.getByText("Buy now");
+
+    expect(button).toHaveStyle(`box-shadow:${theme.shadows.big}`);
+  });
 }
