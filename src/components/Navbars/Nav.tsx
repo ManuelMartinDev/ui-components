@@ -52,7 +52,7 @@ export const Nav: React.FC<NavProps> = (props) => {
   const match = useMediaQuery(theme!.breakpoints[triggerOn]);
   return (
     <ThemeProvider theme={theme}>
-      <Wrapper>
+      <Wrapper {...props}>
         <Navbar className="navbar" onClick={closeDropdown} {...props}>
           {match && (
             <Hambuger
