@@ -3,8 +3,14 @@ import { baseStyles } from "../globalStyles/base";
 import { styled } from "../commonInterfaces/themes";
 import { NavProps } from "./Nav";
 import { cssifyObject } from "css-in-js-utils";
-export const Wrapper = styled.div`
-  position: relative;
+import { css } from "styled-components";
+export const Wrapper = styled.div<NavProps>`
+  ${({ sticky }) =>
+    sticky &&
+    css`
+      position: sticky;
+      top: 2px;
+    `}
 `;
 export const Navbar = styled.nav`
   ${shapedComponentStyles};

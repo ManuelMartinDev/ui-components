@@ -1,5 +1,5 @@
 import React from "react";
-import { prettyDOM, render, RenderResult } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { TextInput } from "./TextInput";
 
 describe("TextInput", () => {

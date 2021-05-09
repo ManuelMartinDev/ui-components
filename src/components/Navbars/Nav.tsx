@@ -4,7 +4,7 @@ import { shapedComponentsProps } from "../commonInterfaces/shapedComponents";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../themes";
 import Face from "../../assets/face.jpeg";
-
+import { uuid } from "uuidv4";
 import {
   Wrapper,
   Navbar,
@@ -26,7 +26,7 @@ import HambugerSvg from "../../assets/menu.svg";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 export interface NavProps extends shapedComponentsProps {
   logo?: string;
-  mobileLogo: string;
+  mobileLogo?: string;
   direction?: string;
   dropdownIsOpen?: boolean;
   userLinks?: string[] | React.Component[] | React.FC[];
@@ -35,6 +35,7 @@ export interface NavProps extends shapedComponentsProps {
   navLinks: JSX.Element[] | React.FC[] | React.Component[] | string[];
   menuIsOpen?: boolean;
   triggerOn: "tablet" | "desktop";
+  sticky?: boolean;
 }
 export const Nav: React.FC<NavProps> = (props) => {
   const { userPicture, navLinks, triggerOn, theme, logo, mobileLogo } = props;
@@ -69,7 +70,10 @@ export const Nav: React.FC<NavProps> = (props) => {
           {!match && (
             <FullLinkList className="navbar__full-linklist">
               {props.navLinks.map((link: any) => (
-                <FullLinkListItem className="navbar__full-linklist__item">
+                <FullLinkListItem
+                  key={uuid()}
+                  className="navbar__full-linklist__item"
+                >
                   {link}
                 </FullLinkListItem>
               ))}
@@ -86,7 +90,10 @@ export const Nav: React.FC<NavProps> = (props) => {
               >
                 <DropdownList className="navbar__dropdown__list">
                   {props.userLinks?.map((link: any) => (
-                    <DropdownItem className="navbar__dropdown__list-item">
+                    <DropdownItem
+                      key={uuid()}
+                      className="navbar__dropdown__list-item"
+                    >
                       {link}
                     </DropdownItem>
                   ))}
@@ -104,7 +111,10 @@ export const Nav: React.FC<NavProps> = (props) => {
         >
           <LinksList className="navbar__mobile-menu__list">
             {navLinks.map((link: any) => (
-              <LinkListItem className="navbar__mobile-menu__list__item">
+              <LinkListItem
+                key={uuid()}
+                className="navbar__mobile-menu__list__item"
+              >
                 {link}
               </LinkListItem>
             ))}

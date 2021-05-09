@@ -7,7 +7,7 @@ export interface Styles {
   desktop: CSS.Properties;
 }
 export interface BaseProps {
-  theme: Theme;
+  theme?: Theme;
   additionalStyles?: CSS.Properties;
   responsiveStyles?: Styles;
 }
