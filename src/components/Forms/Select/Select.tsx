@@ -9,16 +9,17 @@ import {
 } from "./Styles";
 import { shapedComponentsProps } from "../../commonInterfaces/shapedComponents";
 import { uuid } from "uuidv4";
-import { useDropdown } from "../../hooks/useDropdown";
+
 export interface SelectProps extends shapedComponentsProps {
-  dropdownIsOpen?: boolean;
-  itemsList: string[];
-  opener: string | React.FC | React.Component | React.ReactElement;
+  itemsList: [{ id: string; display: string }];
+  opener?: string | React.FC | React.Component | React.ReactElement;
+  dropdownIsOpen: boolean;
+  toggleDropdown: () => void;
+  selected: { id: string; display: string };
+  selectItem: (item: { id: string; display: string }) => void;
 }
 export const SelectDropdown: React.FC<SelectProps> = (props) => {
-  const [dropdownIsOpen, toggleDropdown, selected, selectItem] = useDropdown(
-    props
-  );
+  const { dropdownIsOpen, toggleDropdown, selected, selectItem } = props;
   const { itemsList } = props;
   return (
     <Container>
@@ -26,7 +27,7 @@ export const SelectDropdown: React.FC<SelectProps> = (props) => {
         {React.isValidElement(itemsList[0]) ? (
           selected
         ) : (
-          <Span>{selected}</Span>
+          <Span>{selected.display}</Span>
         )}
         <Opener onClick={toggleDropdown}>{props.opener}</Opener>
       </Select>
@@ -39,7 +40,7 @@ export const SelectDropdown: React.FC<SelectProps> = (props) => {
               }}
               key={uuid()}
             >
-              {item}
+              {item.display}
             </SelectItem>
           ))}
         </SelectList>
@@ -49,6 +50,11 @@ export const SelectDropdown: React.FC<SelectProps> = (props) => {
 };
 
 SelectDropdown.defaultProps = {
-  itemsList: new Array(10).fill(1).map((e, i) => (e = `Elemento ${++i}`)),
+  itemsList: [
+    {
+      id: "1",
+      display: "Elemento 2",
+    },
+  ],
   opener: <Opener>{">"}</Opener>,
 };

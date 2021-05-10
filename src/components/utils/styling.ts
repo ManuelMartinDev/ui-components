@@ -1,7 +1,7 @@
 import { shapedComponentsProps } from "../commonInterfaces/shapedComponents";
 
 export function simpleRadius({ theme, borderShape }: shapedComponentsProps) {
-  return borderShape && theme.borders[borderShape];
+  return borderShape && theme!.borders[borderShape];
 }
 
 export function complexRadius(
@@ -15,8 +15,8 @@ export function complexRadius(
     return (
       (complexBorderShape &&
         complexBorderShape[side] &&
-        theme.borders[complexBorderShape[side]!]) ??
-      (borderShape && theme.borders[borderShape])
+        theme!.borders[complexBorderShape[side]!]) ??
+      (borderShape && theme!.borders[borderShape])
     );
   };
 }
@@ -26,16 +26,16 @@ export function bgTypeSelector({
   customBg,
   theme,
 }: shapedComponentsProps) {
-  return bgType && bgType !== "custom" ? theme.colors[bgType] : customBg;
+  return bgType && bgType !== "custom" ? theme!.colors[bgType] : customBg;
 }
 
 export function setDarkOnUserPrefrence({
   darkOnUserPreference,
   theme,
 }: shapedComponentsProps) {
-  return darkOnUserPreference && theme.colors.dark;
+  return darkOnUserPreference && theme!.colors.dark;
 }
 
 export function setShadow({ theme, shadow }: shapedComponentsProps) {
-  return shadow && theme.shadows[shadow];
+  return shadow && theme!.shadows[shadow];
 }
