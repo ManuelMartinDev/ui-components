@@ -54,8 +54,13 @@ export const SelectItem = styled.li`
   &:hover {
     background-color: rgba(242, 242, 242);
   }
+  cursor: pointer;
 `;
 
 export const Span = styled.span`
   margin-left: 10px;
+`;
+
+export const Opener = styled.span`
+  transform: rotate(90deg);
 `;
