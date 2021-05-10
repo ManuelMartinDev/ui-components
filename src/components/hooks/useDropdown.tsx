@@ -8,11 +8,11 @@ export function useDropdown(props: SelectProps) {
     setSelected(item);
     setDropdown(false);
   };
-  const exported: [
-    boolean,
-    () => void,
-    string,
-    React.Dispatch<React.SetStateAction<string>>
-  ] = [dropdownIsOpen, toggleDropdown, selected, selectItem];
+  const exported: [boolean, () => void, string, (item: string) => void] = [
+    dropdownIsOpen,
+    toggleDropdown,
+    selected,
+    selectItem,
+  ];
   return exported;
 }

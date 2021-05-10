@@ -49,6 +49,6 @@ export const SelectDropdown: React.FC<SelectProps> = (props) => {
 };
 
 SelectDropdown.defaultProps = {
-  itemsList: new Array(10).fill(1).map((e, i) => (e = `Elemento ${i}`)),
+  itemsList: new Array(10).fill(1).map((e, i) => (e = `Elemento ${++i}`)),
   opener: <Opener>{">"}</Opener>,
 };
