@@ -1,20 +1,23 @@
 import React, { useState } from "react";
 import { SelectProps } from "../Forms/Select/Select";
-export function useDropdown(itemsList: [{ id: string; display: string }]) {
+
+export interface DropdownItem {
+  id: string;
+  display: string;
+}
+export function useDropdown() {
   const [dropdownIsOpen, setDropdown] = useState<boolean>(false);
-  const [selected, setSelected] = useState<{ id: string; display: string }>(
-    itemsList[0]
-  );
+  const [selected, setSelected] = useState<DropdownItem>();
   const toggleDropdown = () => setDropdown(!dropdownIsOpen);
-  const selectItem = (item: { id: string; display: string }) => {
-    setSelected(item);
+  const selectItem = (item: DropdownItem) => {
+    item && setSelected(item);
     setDropdown(false);
   };
   const exported: [
     boolean,
     () => void,
-    { id: string; display: string },
-    (item: { id: string; display: string }) => void
-  ] = [dropdownIsOpen, toggleDropdown, selected, selectItem];
+    DropdownItem,
+    (item: DropdownItem) => void
+  ] = [dropdownIsOpen, toggleDropdown, selected!, selectItem];
   return exported;
 }

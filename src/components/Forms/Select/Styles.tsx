@@ -21,11 +21,14 @@ export const Select = styled.div<SelectProps>`
   align-items: center;
   justify-content: space-between;
   padding: 0 10px 0 10px;
+  border-radius: ${({ borderRadius }) => borderRadius};
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 `;
 
 export const SelectList = styled.ul<SelectProps>`
   width: 100%;
-  border: 2px solid red;
+  border: 2px solid green;
   border-top: 0;
   border-top: ${({ dropdownIsOpen }) =>
     dropdownIsOpen ? "0" : "2px solid red"};
@@ -35,9 +38,13 @@ export const SelectList = styled.ul<SelectProps>`
   margin: 0;
   position: absolute;
   top: 40px;
-  padding-top: 10px;
-  height: 300px;
-  overflow-y: scroll;
+  padding-top: ${({ dropdownIsOpen }) => (dropdownIsOpen ? "10px" : "0")};
+  overflow-y: hidden;
+  border-bottom: ${({ dropdownIsOpen }) =>
+    dropdownIsOpen ? "2px solid red" : "0"};
+  border-radius: ${({ borderRadius }) => borderRadius};
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 `;
 export const SelectItem = styled.li`
   font-family: ---apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -45,7 +52,7 @@ export const SelectItem = styled.li`
   width: 100%;
   height: 30px;
   border: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   margin: 0;
   padding: 20px 0 20px 10px;
