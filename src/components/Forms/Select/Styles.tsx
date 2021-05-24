@@ -9,10 +9,10 @@ export const Container = styled.div`
 `;
 
 export const Select = styled.div<SelectProps>`
-  border: 2px solid red;
+  border: 2px solid rgba(0, 0, 0, 0.4);
   border-bottom: 0;
   border-bottom: ${({ dropdownIsOpen }) =>
-    dropdownIsOpen ? 0 : "2px solid red"};
+    dropdownIsOpen ? 0 : "2px solid rgba(0,0,0,0.4)"};
   width: 100%;
   height: 40px;
   box-sizing: border-box;
@@ -28,10 +28,10 @@ export const Select = styled.div<SelectProps>`
 
 export const SelectList = styled.ul<SelectProps>`
   width: 100%;
-  border: 2px solid green;
+  border: 2px solid rgba(0, 0, 0, 0.4);
   border-top: 0;
   border-top: ${({ dropdownIsOpen }) =>
-    dropdownIsOpen ? "0" : "2px solid red"};
+    dropdownIsOpen ? "0" : "2px solid rgba(0,0,0,0.4)"};
   list-style: none;
   padding: 0;
   box-sizing: border-box;
@@ -41,7 +41,7 @@ export const SelectList = styled.ul<SelectProps>`
   padding-top: ${({ dropdownIsOpen }) => (dropdownIsOpen ? "10px" : "0")};
   overflow-y: hidden;
   border-bottom: ${({ dropdownIsOpen }) =>
-    dropdownIsOpen ? "2px solid red" : "0"};
+    dropdownIsOpen ? "2px solid rgba(0,0,0,0.4)" : "0"};
   border-radius: ${({ borderRadius }) => borderRadius};
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -52,7 +52,7 @@ export const SelectItem = styled.li`
   width: 100%;
   height: 30px;
   border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 2px solid rgba(0, 0, 0, 0.4);
   box-sizing: border-box;
   margin: 0;
   padding: 20px 0 20px 10px;

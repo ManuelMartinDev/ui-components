@@ -53,12 +53,6 @@ export const SelectDropdown: React.FC<SelectProps> = (props) => {
 };
 
 SelectDropdown.defaultProps = {
-  itemsList: [
-    {
-      id: "1",
-      display: "Elemento 2",
-    },
-  ],
   opener: <Opener>{">"}</Opener>,
   placeholder: "Edit this message using placeholder prop",
 };
