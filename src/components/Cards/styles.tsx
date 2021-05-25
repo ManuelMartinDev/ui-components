@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { InfoCardProps } from "./InfoCard";
-
-export const Card = styled.div`
+import { shapedComponentStyles } from "../globalStyles/shapedComponents";
+import { baseStyles } from "../globalStyles/base";
+export const Card = styled.div<InfoCardProps>`
   width: 400px;
   height: 378px;
   border: 2px solid red;
@@ -12,6 +13,8 @@ export const Card = styled.div`
   align-items: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  ${baseStyles}
+  ${shapedComponentStyles}
 `;
 
 export const CardTitle = styled.h2<InfoCardProps>`
