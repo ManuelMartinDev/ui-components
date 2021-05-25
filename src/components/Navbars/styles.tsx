@@ -6,12 +6,16 @@ import { cssifyObject } from "css-in-js-utils";
 import { css } from "styled-components";
 export const Wrapper = styled.div<NavProps>`
   ${({ sticky }) =>
-    sticky &&
-    css`
-      position: sticky;
-      top: 2px;
-    `}
+    sticky
+      ? css`
+          position: sticky;
+          top: 2px;
+        `
+      : css`
+          position: relative;
+        `}
 `;
+
 export const Navbar = styled.nav`
   ${shapedComponentStyles};
   ${baseStyles};
@@ -22,6 +26,7 @@ export const Navbar = styled.nav`
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
+  position: relative;
 `;
 
 export const Logo = styled.img<NavProps>`
@@ -99,10 +104,11 @@ export const MobileMenu = styled.div<NavProps>`
   height: 300px;
   width: 100%;
   position: absolute;
-  top: 64px;
   z-index: 1;
   max-height: ${({ menuIsOpen }) => (menuIsOpen ? "1080px" : 0)};
   transition: max-height 200ms ease-in-out;
+
+  box-sizing: border-box;
 `;
 
 export const LinksList = styled.ul`
