@@ -3,7 +3,8 @@ import { InfoCardProps } from "./InfoCard";
 import { shapedComponentStyles } from "../globalStyles/shapedComponents";
 import { baseStyles } from "../globalStyles/base";
 export const Card = styled.div<InfoCardProps>`
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: 378px;
   border: 2px solid red;
   border-radius: 24px;
