@@ -20,16 +20,10 @@ export const InfoCard: React.FC<InfoCardProps> = (props) => {
 };
 
 InfoCard.defaultProps = {
-  HeadComponent: () => (
-    <img
-      style={{ width: "100%" }}
-      src="https://cde.laprensa.e3.pe/ima/0/0/2/1/2/212026.jpg"
-      alt="avatar"
-    ></img>
-  ),
   title: "card title",
   description:
     "lorem fsofn sfoinsfpinsf sofinsf sg sgs fsfousbgusbg sgousbgoubs gsgoubsg",
   titleUppercase: "capitalize",
   theme: theme,
+  shadow: "medium",
 };

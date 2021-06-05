@@ -6,7 +6,7 @@ import { TextInputProps } from "./TextInput";
 export const Input = styled.input<TextInputProps>`
   outline: none;
   &:focus {
-    outline: none;
+    border: ${({ focusColor }) => focusColor && `2px solid ${focusColor}`};
   }
   ${shapedComponentStyles};
   ${baseStyles};
@@ -17,3 +17,5 @@ export const Label = styled.label<TextInputProps>`
     labelPosition === "top" ? "block" : "inline-block"};
   margin-bottom: 5px;
 `;
+
+export const InputWrapper = styled.div<TextInputProps>``;

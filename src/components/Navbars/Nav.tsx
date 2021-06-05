@@ -61,12 +61,14 @@ export const Nav: React.FC<NavProps> = (props) => {
               src={HambugerSvg}
             ></Hambuger>
           )}
-          <Logo
-            className="navbar__logo"
-            {...props}
-            alt="logo"
-            src={match ? mobileLogo ?? logo : logo}
-          />
+          {logo && (
+            <Logo
+              className="navbar__logo"
+              {...props}
+              alt="logo"
+              src={match ? mobileLogo ?? logo : logo}
+            />
+          )}
           {!match && (
             <FullLinkList className="navbar__full-linklist">
               {props.navLinks.map((link: any) => (
@@ -127,10 +129,12 @@ export const Nav: React.FC<NavProps> = (props) => {
 
 Nav.defaultProps = {
   theme,
-  userLinks: ["Home", "Shop"],
-  userPicture: () => <img alt="face" src={Face}></img>,
   menuColor: theme.colors.dark,
-  navLinks: ["Link1", "Link2", "Link3", "Link4"],
+  navLinks: [
+    <a href="www.google.com">Google</a>,
+    <a href="www.google.com">Google</a>,
+    <a href="www.google.com">Google</a>,
+    <a href="www.google.com">Google</a>,
+  ],
   triggerOn: "tablet",
-  logo: Svg,
 };

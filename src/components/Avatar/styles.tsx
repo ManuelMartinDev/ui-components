@@ -1,4 +1,3 @@
-import { url } from "node:inspector";
 import styled, { css } from "styled-components";
 import { AvatarProps } from "./Avatar";
 import { baseStyles } from "../globalStyles/base";

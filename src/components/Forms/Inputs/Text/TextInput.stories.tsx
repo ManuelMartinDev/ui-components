@@ -31,7 +31,7 @@ const Template: Story<TextInputProps> = (args) => <TextInput {...args} />;
 export const Underline = Template.bind({});
 export const Rounded = Template.bind({});
 export const noLabel = Template.bind({});
-
+export const Trailing = Template.bind({});
 Underline.args = {
   label: "Username",
   additionalStyles: {
@@ -52,6 +52,7 @@ Rounded.args = {
     width: "180px",
     fontSize: "1em",
   },
+  focusColor: "blue",
 };
 
 noLabel.args = {

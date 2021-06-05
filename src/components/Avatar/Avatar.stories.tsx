@@ -7,8 +7,16 @@ export default {
 } as Meta;
 
 const Template: Story<AvatarProps> = (args) => <Avatar {...args} />;
-export const Underline = Template.bind({});
-export const Rounded = Template.bind({});
-export const noLabel = Template.bind({});
+export const Big = Template.bind({});
+export const Medium = Template.bind({});
+export const Small = Template.bind({});
 
-Underline.args = {};
+Big.args = {
+  size: "big",
+};
+Medium.args = {
+  size: "medium",
+};
+Small.args = {
+  size: "small",
+};

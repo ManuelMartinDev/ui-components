@@ -6,7 +6,6 @@ export const Card = styled.div<InfoCardProps>`
   width: 100%;
   max-width: 400px;
   height: 378px;
-  border: 2px solid red;
   border-radius: 24px;
   overflow: hidden;
   display: flex;
@@ -14,8 +13,9 @@ export const Card = styled.div<InfoCardProps>`
   align-items: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  ${baseStyles}
+
   ${shapedComponentStyles}
+  ${baseStyles}
 `;
 
 export const CardTitle = styled.h2<InfoCardProps>`

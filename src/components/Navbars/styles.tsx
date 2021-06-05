@@ -17,8 +17,6 @@ export const Wrapper = styled.div<NavProps>`
 `;
 
 export const Navbar = styled.nav`
-  ${shapedComponentStyles};
-  ${baseStyles};
   width: 100%;
   height: 64px;
   color: white;
@@ -27,6 +25,8 @@ export const Navbar = styled.nav`
   justify-content: space-between;
   box-sizing: border-box;
   position: relative;
+  ${shapedComponentStyles};
+  ${baseStyles};
 `;
 
 export const Logo = styled.img<NavProps>`
@@ -107,7 +107,7 @@ export const MobileMenu = styled.div<NavProps>`
   z-index: 1;
   max-height: ${({ menuIsOpen }) => (menuIsOpen ? "1080px" : 0)};
   transition: max-height 200ms ease-in-out;
-
+  overflow: hidden;
   box-sizing: border-box;
 `;
 
@@ -136,6 +136,7 @@ export const LinkListItem = styled.li`
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
+  margin: 0 14px 0 14px;
 `;
 
 export const FullLinkList = styled.ul`
@@ -144,7 +145,7 @@ export const FullLinkList = styled.ul`
   display: flex;
   align-items: center;
   list-style: none;
-  justify-content: space-around;
+
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 `;

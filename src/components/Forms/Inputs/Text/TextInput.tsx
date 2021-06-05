@@ -7,7 +7,8 @@ export interface TextInputProps
     React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   placeholder?: string;
-  labelPosition: "top" | "side";
+  labelPosition?: "top" | "side";
+  focusColor?: string;
 }
 export const TextInput: React.FC<TextInputProps> = (props) => {
   return (
@@ -20,6 +21,7 @@ export const TextInput: React.FC<TextInputProps> = (props) => {
           {props.label}
         </Label>
       )}
+
       <Input className="text-input" {...props}></Input>
     </Fragment>
   );
