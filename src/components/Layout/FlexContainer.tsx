@@ -1,10 +1,11 @@
 import React from "react";
 import { FlexboxContainer } from "./styles";
 import { shapedComponentsProps } from "../commonInterfaces/shapedComponents";
+import { theme } from "../themes";
 export interface FlexContainerProps extends shapedComponentsProps {
-  direction: "row" | "row-reverse" | "column" | "column-reverse";
-  wrap: "nowrap" | "wrap" | "wrap-reverse";
-  justifyContent:
+  direction?: "row" | "row-reverse" | "column" | "column-reverse";
+  wrap?: "nowrap" | "wrap" | "wrap-reverse";
+  justifyContent?:
     | "flex-start"
     | "flex-end"
     | "center"
@@ -15,7 +16,7 @@ export interface FlexContainerProps extends shapedComponentsProps {
     | "end"
     | "left"
     | "right";
-  alignItems:
+  alignItems?:
     | "stretch"
     | "flex-start"
     | "flex-end"
@@ -27,7 +28,7 @@ export interface FlexContainerProps extends shapedComponentsProps {
     | "end"
     | "self-start"
     | "self-end";
-  alignContent:
+  alignContent?:
     | "flex-start"
     | "flex-end"
     | "center"
@@ -43,4 +44,8 @@ export interface FlexContainerProps extends shapedComponentsProps {
 }
 export const FlexContainer: React.FC<FlexContainerProps> = (props) => {
   return <FlexboxContainer {...props}>{props.children}</FlexboxContainer>;
+};
+
+FlexContainer.defaultProps = {
+  theme: theme,
 };
