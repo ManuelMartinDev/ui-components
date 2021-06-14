@@ -25,20 +25,21 @@ import Svg from "../../assets/fastify-icon.svg";
 import HambugerSvg from "../../assets/menu.svg";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 export interface NavProps extends shapedComponentsProps {
-  logo?: string;
+  logo?: React.ReactChild;
   mobileLogo?: string;
   direction?: string;
   dropdownIsOpen?: boolean;
-  userLinks?: string[] | React.Component[] | React.FC[];
-  userPicture?: React.FC | React.Component | React.FC[] | React.Component[];
+  userLinks?: string[] | React.ReactChild[];
+  userPictureSrc?: string;
   menuColor: string;
   navLinks: JSX.Element[] | React.FC[] | React.Component[] | string[];
   menuIsOpen?: boolean;
   triggerOn: "tablet" | "desktop";
   sticky?: boolean;
+  navLinksHoverBg?: string;
 }
 export const Nav: React.FC<NavProps> = (props) => {
-  const { userPicture, navLinks, triggerOn, theme, logo, mobileLogo } = props;
+  const { navLinks, triggerOn, theme, logo, mobileLogo } = props;
   const [dropdownIsOpen, setDropdown] = useState<boolean>(false);
   const [menuIsOpen, setMenu] = useState<boolean>(false);
   const closeDropdown = (e: React.MouseEvent) => {
@@ -61,18 +62,12 @@ export const Nav: React.FC<NavProps> = (props) => {
               src={HambugerSvg}
             ></Hambuger>
           )}
-          {logo && (
-            <Logo
-              className="navbar__logo"
-              {...props}
-              alt="logo"
-              src={match ? mobileLogo ?? logo : logo}
-            />
-          )}
+          {logo && logo}
           {!match && (
             <FullLinkList className="navbar__full-linklist">
               {props.navLinks.map((link: any) => (
                 <FullLinkListItem
+                  {...props}
                   key={uuid()}
                   className="navbar__full-linklist__item"
                 >
@@ -81,9 +76,14 @@ export const Nav: React.FC<NavProps> = (props) => {
               ))}
             </FullLinkList>
           )}
-          {userPicture ? (
+          {props.userPictureSrc ? (
             <UserDropdown onClick={toggleDropdown}>
-              <UserPicture className="navbar__user-picture" src={Face} />
+              {
+                <UserPicture
+                  className="navbar__user-picture"
+                  src={props.userPictureSrc}
+                />
+              }
               <Dropdown
                 className="navbar__dropdown"
                 onClick={(e: React.MouseEvent) => e.stopPropagation()}
@@ -130,11 +130,5 @@ export const Nav: React.FC<NavProps> = (props) => {
 Nav.defaultProps = {
   theme,
   menuColor: theme.colors.dark,
-  navLinks: [
-    <a href="www.google.com">Google</a>,
-    <a href="www.google.com">Google</a>,
-    <a href="www.google.com">Google</a>,
-    <a href="www.google.com">Google</a>,
-  ],
   triggerOn: "tablet",
 };

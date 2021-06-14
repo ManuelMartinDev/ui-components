@@ -30,8 +30,6 @@ export const Navbar = styled.nav`
 `;
 
 export const Logo = styled.img<NavProps>`
-  width: 60px;
-  height: 60px;
   ${({ triggerOn, theme }) => `@media(min-width:${theme.breakpoints.tablet}) { 
 	${cssifyObject({ marginLeft: "20px" })}
   }`}
@@ -145,11 +143,23 @@ export const FullLinkList = styled.ul`
   display: flex;
   align-items: center;
   list-style: none;
+  padding: 0;
 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 `;
 
-export const FullLinkListItem = styled.li`
+export const FullLinkListItem = styled.li<NavProps>`
   margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 10px 5px 10px;
+  transition: background-color 200ms ease-in-out;
+  &:hover {
+    background-color: ${({ navLinksHoverBg }) =>
+      navLinksHoverBg && navLinksHoverBg};
+    transition: 200ms ease-in-out;
+  }
+  border-radius: 5px;
 `;
