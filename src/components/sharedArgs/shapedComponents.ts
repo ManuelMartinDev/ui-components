@@ -47,7 +47,7 @@ export const shapedComponentsArgsTypes = {
 
 export const shapedComponentsArgs = {
   darkOnUserPreference: false,
-  complexBorderShape: {
+  /*  complexBorderShape: {
     topRight: "",
     topLeft: "",
     bottomRight: "",
@@ -57,5 +57,5 @@ export const shapedComponentsArgs = {
     mobile: {},
     tablet: {},
     desktop: {},
-  },
+  }, */
 };

@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { shapedComponentsProps } from "../commonInterfaces/shapedComponents";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../themes";
-import Face from "../../assets/face.jpeg";
 import { uuid } from "uuidv4";
 import {
   Wrapper,
@@ -21,7 +20,7 @@ import {
   FullLinkList,
   FullLinkListItem,
 } from "./styles";
-import Svg from "../../assets/fastify-icon.svg";
+
 import HambugerSvg from "../../assets/menu.svg";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 export interface NavProps extends shapedComponentsProps {

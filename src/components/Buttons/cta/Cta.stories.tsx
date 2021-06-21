@@ -8,7 +8,7 @@ import { baseArgsTypes, baseArgs } from "../../sharedArgs/base";
 import { Cta, CtaProps } from "./Cta";
 
 export default {
-  title: "Example/Buttons/CTA",
+  title: "Components/Buttons/CTA",
   component: Cta,
   argTypes: {
     label: {
@@ -31,6 +31,7 @@ const Template: Story<CtaProps> = (args) => <Cta {...args} />;
 export const Primary = Template.bind({});
 export const Danger = Template.bind({});
 export const Warning = Template.bind({});
+export const onlyMobile = Template.bind({});
 Primary.args = {
   bgType: "primary",
 };
@@ -39,4 +40,14 @@ Warning.args = {
 };
 Danger.args = {
   bgType: "danger",
+};
+onlyMobile.args = {
+  bgType: "primary",
+  responsiveStyles: {
+    mobile: {
+      border: "2px solid red",
+    },
+    tablet: {},
+    desktop: {},
+  },
 };
