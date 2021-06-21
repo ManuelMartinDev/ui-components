@@ -9,11 +9,9 @@ export default {
 } as Meta;
 
 const Template: Story<SelectProps> = (args) => <SelectSample {...args} />;
-export const Underline = Template.bind({});
-export const Rounded = Template.bind({});
-export const noLabel = Template.bind({});
+export const Default = Template.bind({});
 
-Underline.args = {
+Default.args = {
   itemsList: [
     {
       id: "1",
