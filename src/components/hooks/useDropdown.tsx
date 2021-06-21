@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { SelectProps } from "../Forms/Select/Select";
+import { useState } from "react";
 
 export interface DropdownItem {
   id: string;

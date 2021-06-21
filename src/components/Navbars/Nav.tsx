@@ -7,7 +7,6 @@ import { uuid } from "uuidv4";
 import {
   Wrapper,
   Navbar,
-  Logo,
   Hambuger,
   UserDropdown,
   Dropdown,
@@ -25,7 +24,6 @@ import HambugerSvg from "../../assets/menu.svg";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 export interface NavProps extends shapedComponentsProps {
   logo?: React.ReactChild;
-  mobileLogo?: string;
   direction?: string;
   dropdownIsOpen?: boolean;
   userLinks?: string[] | React.ReactChild[];
@@ -38,7 +36,7 @@ export interface NavProps extends shapedComponentsProps {
   navLinksHoverBg?: string;
 }
 export const Nav: React.FC<NavProps> = (props) => {
-  const { navLinks, triggerOn, theme, logo, mobileLogo } = props;
+  const { navLinks, triggerOn, theme, logo } = props;
   const [dropdownIsOpen, setDropdown] = useState<boolean>(false);
   const [menuIsOpen, setMenu] = useState<boolean>(false);
   const closeDropdown = (e: React.MouseEvent) => {
