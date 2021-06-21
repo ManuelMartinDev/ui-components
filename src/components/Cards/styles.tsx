@@ -6,7 +6,7 @@ export const Card = styled.div<InfoCardProps>`
   width: 100%;
   max-width: 400px;
   height: 378px;
-  border-radius: 24px;
+  border-radius: 23px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
