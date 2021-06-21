@@ -8,6 +8,4 @@ export default {
 } as Meta;
 
 const Template: Story<CtaTextProps> = (args) => <CtaTextSample {...args} />;
-export const withPicture = Template.bind({});
-export const withAvatar = Template.bind({});
-export const noLabel = Template.bind({});
+export const CtaText = Template.bind({});
