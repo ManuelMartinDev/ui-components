@@ -1,7 +1,7 @@
 # Getting Started with UI Components
 You can check the components on the [storybook](https://www.chromatic.com/builds?appId=60d05ac5c019520049e27844)
 
-You can see a example of how to build a website using UI Components [here] (https://github.com/ManuelMartinDev/real-sample-ui-components) .
+You can see a example of how to build a website using UI Components [here](https://github.com/ManuelMartinDev/real-sample-ui-components) .
 
 ## Test it in replit
 
